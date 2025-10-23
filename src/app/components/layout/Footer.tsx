@@ -17,8 +17,8 @@ const Footer = () => {
             <Image src="/Group.png" alt="Logo" width={60} height={50} />
           </div>
           <div>
-            <div className="flex items-center relative space-x-2">
-              <select className="bg-transparent pl-8 text-sm text-gray-400 border border-gray-700 rounded px-2 py-1">
+            <div className="flex items-center relative  space-x-2">
+              <select className="bg-transparent right-2 pl-8  text-sm text-gray-400 border border-gray-400 rounded px-3 py-2">
                 <option>Eng</option>
                 <option>Esp</option>
                 <option>Fra</option>
@@ -91,7 +91,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="mt-4 p-2 border text-md item-center pl-10 border-gray-300 rounded w-full"
+              className="mt-4 p-2 border border-stone-800 text-md item-center pl-10 bg-stone-900 rounded w-full"
             />
             <span className="text-gray-400 absolute left-3 top-26 transform -translate-y-1/2"><MdEmail size={18} className="mr-2" /></span>
             <span className="text-white bg-[#00695C] absolute right-3 top-26 w-8 h-7 rounded-sm item-center transform -translate-y-1/2"><SendIcon size={18} className=" mt-1 ml-2" /></span>

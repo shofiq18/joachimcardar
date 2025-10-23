@@ -109,19 +109,19 @@ const FAQPage: NextPage = () => {
             <p className="text-gray-600">Still Have Questions? We are Here to Help!</p>
             <a href="/contact" className="text-teal-600 font-bold mt-2 flex items-center group">
               Contact Us
-              <FiArrowUpRight className="ml-1 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <FiArrowUpRight size={20} className="ml-2 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </div>
 
           {/* Right Column (Accordion) */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-8">
             {faqData.map((faq, index) => (
               <div key={index} className="border-b border-gray-200 pb-4">
                 <button
                   onClick={() => handleToggle(index)}
                   className="w-full flex justify-between items-center text-left"
                 >
-                  <h3 className="text-lg font-semibold text-gray-800">{faq.question}</h3>
+                  <h3 className="text-xl font-semibold text-gray-800">{faq.question}</h3>
                   {openIndex === index ? ( 
                      <FiX className="text-gray-500" />
                   ) : (
@@ -140,15 +140,15 @@ const FAQPage: NextPage = () => {
 
         {/* Latest Articles Section */}
         <section className="mt-24 pt-16 border-t border-gray-100">
-          <h2 className="text-4xl font-bold text-center text-gray-800">Latest Articles</h2>
+          <h2 className="text-5xl font-bold text-center text-[#2D2D2D]">Latest Articles</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {latestArticles.map((post, index) => (
               <div key={index} className="flex flex-col">
                   <div className="rounded-lg overflow-hidden mb-4">
                       <Image src={post.imageUrl} alt={post.title} width={600} height={400} className="w-full h-[300px] object-cover"/>
                   </div>
-                  <p className="text-teal-500 font-semibold text-sm">{post.category}</p>
-                  <h3 className="text-xl font-bold mt-2 text-gray-800">{post.title}</h3>
+                  <p className="text-teal-500 font-semibold text-[16px]">{post.category}</p>
+                  <h3 className="text-xl font-semibold mt-2 text-[#2D2D2D]">{post.title}</h3>
                   <div className="flex items-center mt-4">
                     <Image src="/placeholder-images/author.png" alt={post.author} width={40} height={40} className="rounded-full"/>
                     <div className="ml-4 text-sm">
@@ -162,7 +162,7 @@ const FAQPage: NextPage = () => {
           <div className="text-center mt-12">
             <a 
               href="/blog" 
-              className="bg-teal-600 text-white font-bold py-3 px-8 rounded-md hover:bg-teal-700 transition-colors"
+              className="bg-[#00695C] text-white py-3 px-8 rounded-md hover:bg-teal-700 transition-colors"
             >
               View All Blogs
             </a>

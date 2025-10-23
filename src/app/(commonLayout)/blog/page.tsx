@@ -100,13 +100,13 @@ const BlogPage: NextPage = () => {
       <main className="max-w-7xl mx-auto px-4 py-16">
         {/* Featured Post */}
         {featuredPost && (
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
+          <div className="grid md:grid-cols-2 gap-8 justify-start mb-16">
             <div className="rounded-lg overflow-hidden">
                 <Image src={featuredPost.imageUrl} alt={featuredPost.title} width={800} height={600} className="w-full h-full object-cover"/>
             </div>
             <div>
-              <p className="text-teal-500 font-semibold text-sm">{featuredPost.category}</p>
-              <h2 className="text-3xl font-bold mt-2 text-gray-800">{featuredPost.title}</h2>
+              <p className="text-teal-500 font-semibold text-[16px]">{featuredPost.category}</p>
+              <h2 className="text-2xl font-semibold mt-2 text-gray-800">{featuredPost.title}</h2>
               <p className="text-gray-600 mt-4">{featuredPost.excerpt}</p>
               <div className="flex items-center mt-6">
                 <Image src="/profile-blog.jpeg" alt={featuredPost.author} width={40} height={40} className="rounded-full w-10 h-10"/>
@@ -126,8 +126,8 @@ const BlogPage: NextPage = () => {
                 <div className="rounded-lg overflow-hidden mb-4">
                     <Image src={post.imageUrl} alt={post.title} width={600} height={400} className="w-full h-[380px] object-cover"/>
                 </div>
-                <p className="text-teal-500 font-semibold text-sm">{post.category}</p>
-                <h3 className="text-xl font-bold mt-2 text-gray-800">{post.title}</h3>
+                <p className="text-teal-500 font-semibold text-[16px]">{post.category}</p>
+                <h3 className="text-2xl font-semibold mt-2 text-gray-800">{post.title}</h3>
                 {post.excerpt && <p className="text-gray-600 mt-2 flex-grow">{post.excerpt}</p>}
                 <div className="flex items-center mt-4">
                   <Image src="/profile-blog.jpeg" alt={post.author} width={40} height={40} className="rounded-full w-10 h-10"/>
@@ -147,8 +147,8 @@ const BlogPage: NextPage = () => {
                 <div className="rounded-lg overflow-hidden mb-4">
                     <Image src={post.imageUrl} alt={post.title} width={600} height={400} className="w-full h-[300px] object-cover"/>
                 </div>
-                <p className="text-teal-500 font-semibold text-sm">{post.category}</p>
-                <h3 className="text-xl font-bold mt-2 text-gray-800">{post.title}</h3>
+                <p className="text-teal-500 font-semibold text-[16px]">{post.category}</p>
+                <h3 className="text-2xl font-semibold mt-2 text-gray-800">{post.title}</h3>
                 <div className="flex items-center mt-4">
                   <Image src="/profile-blog.jpeg" alt={post.author} width={40} height={40} className="rounded-full w-10 h-10"/>
                   <div className="ml-4 text-sm">

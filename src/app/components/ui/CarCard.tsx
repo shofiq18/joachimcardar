@@ -16,41 +16,56 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
         <Image
           src="/Fake.jpg"
           alt="Car Image"
-          className="w-full h-56 object-cover"
+          className="w-full h-72 object-cover"
           width={500}
           height={300}
         />
         {car.isNew && (
-          <div className="absolute top-4 left-4 bg-teal-600 text-white px-3 py-1 rounded-md text-sm font-medium">
-            NEW
+          <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-md text-sm font-medium">
+            -13%
           </div>
         )}
       </div>
       <div className="p-4">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{car.title}</h3>
-        <p className="text-2xl font-bold text-teal-600 mb-4">{car.price}</p>
-        <div className="flex items-center text-sm text-gray-600 mb-2 space-x-4">
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">{car.title}</h3>
+        <p className="text-xl font-semibold text-gray-700 mb-4">{car.price}</p>
+        <div className="grid grid-cols-3 text-[16px] text-gray-600 mb-2 space-x-4">
           <span className="flex items-center">
-            <span className="mr-1">📅</span> {car.year}
+            <span className="mr-1">
+              <Image src="/icon/road-icon.png"
+                alt='setting-icon'
+                height={20}
+                width={20}
+                /></span> {car.mileage}
           </span>
           <span className="flex items-center">
-            <span className="mr-1">📊</span> {car.mileage}
+            <span className="mr-1">
+              <Image src="/icon/gas-icon.svg"
+                alt='setting-icon'
+                height={20}
+                width={20}
+                />
+              </span> {car.transmission}
           </span>
-          <span className="flex items-center">
-            <span className="mr-1">⚡</span> {car.transmission}
-          </span>
-        </div>
-        <div className="flex items-center text-sm text-gray-600 mb-4">
           {car.isAuto && (
             <span className="flex items-center mr-4">
-              <span className="mr-1">⚙️</span> Auto
+              <span className="mr-1">
+                <Image src="/icon/setting.svg"
+                alt='setting-icon'
+                height={20}
+                width={20}
+                />
+                </span> Auto
             </span>
           )}
-          <span className="flex items-center">
-            <MapPin size={14} className="mr-1" /> {car.location}
-          </span>
+          
         </div>
-        <button className="w-full bg-teal-600 text-white py-2 rounded-md hover:bg-teal-700 transition font-medium">
+        <div>
+            <span className="flex items-center mb-2 text-gray-600 ">
+            <MapPin size={20} className="mr-1 text-gray-600" /> {car.location}
+          </span>
+          </div>
+        <button className="w-full bg-[#00695C] text-white py-2 rounded-md hover:bg-teal-700 transition font-medium">
           View Details
         </button>
       </div>

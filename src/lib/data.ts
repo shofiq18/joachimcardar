@@ -79,22 +79,22 @@ export const categories: Category[] = [
 
 export const features: Feature[] = [
   {
-    icon: '👤',
+    icon: '/icon/verified-icon.svg',
     title: 'Verified Sellers',
     description: 'We ensure every seller and dealer on our platform is verified for your peace of mind.'
   },
   {
-    icon: '🔒',
+    icon: '/icon/payments.svg',
     title: 'Secure Payments',
     description: 'Our secure payment gateway protects your transactions from start to finish.'
   },
   {
-    icon: '🌍',
+    icon: '/icon/listings.svg',
     title: 'Nationwide Listings',
     description: 'Access a vast inventory of cars from every corner of the country.'
   },
   {
-    icon: '📱',
+    icon: '/icon/app-access.svg',
     title: 'Mobile App Access',
     description: 'Browse, buy, and sell on the go with our intuitive mobile app.'
   }

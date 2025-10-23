@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronRight, X } from 'lucide-react';
+import { ArrowUpRight, ChevronRight, X } from 'lucide-react';
 import { faqs } from '@/lib/data';
 import Image from 'next/image';
 
@@ -16,14 +16,14 @@ const FAQ = () => {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-4 mb-8">
+          <div className="space-y-8 mb-8">
               {faqs.map((faq, index) => (
                 <div key={index} className="border-b border-gray-200 pb-4">
                   <button 
                     onClick={() => toggleFAQ(index)}
                     className="w-full flex items-center justify-between text-left hover:text-teal-600 transition"
                   >
-                    <span className="font-medium text-gray-900">{faq}</span>
+                    <span className="font-medium text-xl text-[#2D2D2D]">{faq}</span>
                     {openIndex === index ? (
                       <X size={20} className="text-teal-600" />
                     ) : (
@@ -39,7 +39,7 @@ const FAQ = () => {
               ))}
             </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            <h2 className="text-[40px] font-bold text-[#2D2D2D] mb-8">
               Frequently Asked<br />Question and<br />Answer!
             </h2>
             <div>
@@ -54,7 +54,7 @@ const FAQ = () => {
           </div>
             <p className="text-gray-600 mt-4 mb-4">Still Have Questions? We are here to Help!</p>
             <button className="flex items-center text-teal-600 font-medium hover:text-teal-700 transition">
-              Contact Us <ChevronRight size={20} className="ml-1" />
+              Contact Us  <ArrowUpRight size={24} className='ml-4' />
             </button>
           </div>
         </div>

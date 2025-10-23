@@ -7,14 +7,14 @@ import CarCard from '../ui/CarCard';
 
 const FeaturedCars = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-start mb-12">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Cars</h2>
+            <h2 className="text-[40px] font-bold text-[#2D2D2D] mb-4">Featured Cars</h2>
           </div>
-          <div className="max-w-md">
-            <p className="text-gray-600">
+          <div className="max-w-xl ">
+            <p className="text-gray-600 text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla nunc molestie feugiat. Nunc dolor consectetur elit. pulvinar.
             </p>
           </div>
