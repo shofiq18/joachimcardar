@@ -496,7 +496,7 @@ export default function UploadPhotos({
                 <label
                   className={`flex items-center justify-center h-12 border-2 border-gray-300 rounded-lg cursor-pointer transition-colors ${
                     formData.sellerType === "individual"
-                      ? "bg-teal-600 border-teal-600 text-white"
+                      ? "bg-[#00695C] border-teal-600 text-white"
                       : "hover:border-teal-600"
                   }`}
                 >
@@ -509,7 +509,7 @@ export default function UploadPhotos({
                     className={`font-medium ${
                       formData.sellerType === "individual"
                         ? "text-white"
-                        : "text-teal-600"
+                        : "text-[#00695C]"
                     }`}
                   >
                     Individual
@@ -518,7 +518,7 @@ export default function UploadPhotos({
                 <label
                   className={`flex items-center justify-center h-12 border-2 border-gray-300 rounded-lg cursor-pointer transition-colors ${
                     formData.sellerType === "dealer"
-                      ? "bg-teal-600 border-teal-600 text-white"
+                      ? "bg-[#00695C] border-teal-600 text-white"
                       : "hover:border-teal-600"
                   }`}
                 >
@@ -531,7 +531,7 @@ export default function UploadPhotos({
                     className={`font-medium ${
                       formData.sellerType === "dealer"
                         ? "text-white"
-                        : "text-teal-600"
+                        : "text-[#00695C]"
                     }`}
                   >
                     Dealer
@@ -556,7 +556,7 @@ export default function UploadPhotos({
           </Button>
           <Button
             type="submit"
-            className="flex-1 h-12 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base rounded-lg"
+            className="flex-1 h-12 bg-[#00695C] hover:bg-teal-700 text-white font-semibold text-base rounded-lg"
             disabled={uploading.some((status) => status)}
           >
             Submit Listing

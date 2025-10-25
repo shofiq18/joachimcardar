@@ -119,7 +119,7 @@ export default function PriceNegotiation({ data, onNext, onBack }: PriceNegotiat
             value={formData.priceVinNumber}
             onValueChange={(value) => setFormData({ ...formData, priceVinNumber: value })}
           >
-            <SelectTrigger className="h-12 text-base">
+            <SelectTrigger className="h-12 text-base py-6 w-full">
               <SelectValue placeholder="Enter vehicle's VIN or Chassis Number" />
             </SelectTrigger>
             <SelectContent>
@@ -140,7 +140,7 @@ export default function PriceNegotiation({ data, onNext, onBack }: PriceNegotiat
           </Button>
           <Button
             type="submit"
-            className="flex-1 h-12 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base rounded-lg"
+            className="flex-1 h-12 bg-[#00695C] hover:bg-teal-700 text-white font-semibold text-base rounded-lg"
           >
             Next
           </Button>

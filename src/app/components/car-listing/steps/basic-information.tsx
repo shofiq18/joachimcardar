@@ -65,13 +65,13 @@ export default function BasicInformation({ data, onNext }: BasicInformationProps
           {errors.carTitle && <p className="text-red-500 text-sm mt-1">{errors.carTitle}</p>}
         </div>
 
-        <div>
+        <div className="block">
           <Label htmlFor="category" className="text-base font-medium mb-2 block">
             Category
           </Label>
           <Select value={formData.category} onValueChange={(value) => setFormData({ ...formData, category: value })}>
-            <SelectTrigger className="h-12 text-base">
-              <SelectValue placeholder="Select Category" />
+            <SelectTrigger className="h-12 text-base py-6 w-full ">
+              <SelectValue  placeholder="Select Category " />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="sedan">Sedan</SelectItem>
@@ -89,7 +89,7 @@ export default function BasicInformation({ data, onNext }: BasicInformationProps
             Brand
           </Label>
           <Select value={formData.brand} onValueChange={(value) => setFormData({ ...formData, brand: value })}>
-            <SelectTrigger className="h-12 text-base">
+            <SelectTrigger className="h-12 text-base py-6 w-full">
               <SelectValue placeholder="Select Brand" />
             </SelectTrigger>
             <SelectContent>
@@ -108,7 +108,7 @@ export default function BasicInformation({ data, onNext }: BasicInformationProps
             Model
           </Label>
           <Select value={formData.model} onValueChange={(value) => setFormData({ ...formData, model: value })}>
-            <SelectTrigger className="h-12 text-base">
+            <SelectTrigger className="h-12 text-base py-6 w-full">
               <SelectValue placeholder="Select Model (after Brand)" />
             </SelectTrigger>
             <SelectContent>
@@ -129,7 +129,7 @@ export default function BasicInformation({ data, onNext }: BasicInformationProps
               value={formData.yearOfManufacture}
               onValueChange={(value) => setFormData({ ...formData, yearOfManufacture: value })}
             >
-              <SelectTrigger className="h-12 text-base">
+              <SelectTrigger className="h-12 text-base py-6 w-full">
                 <SelectValue placeholder="Select Year" />
               </SelectTrigger>
               <SelectContent>
@@ -151,7 +151,7 @@ export default function BasicInformation({ data, onNext }: BasicInformationProps
               value={formData.condition}
               onValueChange={(value) => setFormData({ ...formData, condition: value })}
             >
-              <SelectTrigger className="h-12 text-base">
+              <SelectTrigger className="h-12 text-base py-6 w-full">
                 <SelectValue placeholder="Enter mileage" />
               </SelectTrigger>
               <SelectContent>

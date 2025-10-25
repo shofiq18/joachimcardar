@@ -99,7 +99,7 @@ export default function Location({ data, onNext, onBack }: LocationProps) {
           </Button>
           <Button
             type="submit"
-            className="flex-1 h-12 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base rounded-lg"
+            className="flex-1 h-12 bg-[#00695C] hover:bg-teal-700 text-white font-semibold text-base rounded-lg"
           >
             Next
           </Button>

@@ -73,7 +73,7 @@ export default function VehicleDetails({ data, onNext, onBack }: VehicleDetailsP
               Fuel Type
             </Label>
             <Select value={formData.fuelType} onValueChange={(value) => setFormData({ ...formData, fuelType: value })}>
-              <SelectTrigger className="h-12 text-base">
+              <SelectTrigger className="h-12 text-base py-6 w-full">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
@@ -94,7 +94,7 @@ export default function VehicleDetails({ data, onNext, onBack }: VehicleDetailsP
               value={formData.transmission}
               onValueChange={(value) => setFormData({ ...formData, transmission: value })}
             >
-              <SelectTrigger className="h-12 text-base">
+              <SelectTrigger className="h-12 text-base py-6 w-full">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
@@ -115,7 +115,7 @@ export default function VehicleDetails({ data, onNext, onBack }: VehicleDetailsP
             value={formData.engineCapacity}
             onValueChange={(value) => setFormData({ ...formData, engineCapacity: value })}
           >
-            <SelectTrigger className="h-12 text-base">
+            <SelectTrigger className="h-12 text-base py-6 w-full">
               <SelectValue placeholder="e.g. 1500" />
             </SelectTrigger>
             <SelectContent>
@@ -134,7 +134,7 @@ export default function VehicleDetails({ data, onNext, onBack }: VehicleDetailsP
             Color
           </Label>
           <Select value={formData.color} onValueChange={(value) => setFormData({ ...formData, color: value })}>
-            <SelectTrigger className="h-12 text-base">
+            <SelectTrigger className="h-12 text-base py-6 w-full">
               <SelectValue placeholder="e.g. Pearl White" />
             </SelectTrigger>
             <SelectContent>
@@ -158,7 +158,7 @@ export default function VehicleDetails({ data, onNext, onBack }: VehicleDetailsP
               value={formData.registrationYear}
               onValueChange={(value) => setFormData({ ...formData, registrationYear: value })}
             >
-              <SelectTrigger className="h-12 text-base">
+              <SelectTrigger className="h-12 text-base py-6 w-full">
                 <SelectValue placeholder="e.g. 2022" />
               </SelectTrigger>
               <SelectContent>
@@ -180,7 +180,7 @@ export default function VehicleDetails({ data, onNext, onBack }: VehicleDetailsP
               placeholder="Enter vehicle's VIN or Chassis Num..."
               value={formData.vinNumber}
               onChange={(e) => setFormData({ ...formData, vinNumber: e.target.value })}
-              className="h-12 text-base"
+              className="h-12 text-base py-6 w-full"
             />
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function VehicleDetails({ data, onNext, onBack }: VehicleDetailsP
           </Button>
           <Button
             type="submit"
-            className="flex-1 h-12 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base rounded-lg"
+            className="flex-1 h-12 bg-[#00695C] hover:bg-teal-700 text-white font-semibold text-base rounded-lg"
           >
             Next
           </Button>
