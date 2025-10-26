@@ -13,6 +13,17 @@ export interface Car {
   location: string;
   isNew?: boolean;
 }
+export interface ActiveOrderCar {
+  id: number;
+  image: string;
+  title: string;
+  price: number;
+  fuelType:string;
+  mileage: string;
+  transmission: string;
+  location: string;
+  isNew?: boolean;
+}
 
 export interface Brand {
   name: string;

@@ -28,7 +28,7 @@ type LoginRequest = {
 };
 
 type LoginResponse = {
-  // user: UserProfile;
+  // 
   token: string;
   // user: UserProfile;
   success: boolean;
