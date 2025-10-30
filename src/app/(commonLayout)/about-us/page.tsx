@@ -3,32 +3,17 @@ import React from "react";
 import { Check, Plus, MessageCircle, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import { FaGoogle } from "react-icons/fa";
+import ContactHero from "@/app/components/reusabeCard/allHeroSection";
 
 const AboutUs: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-500 text-white py-20 overflow-hidden">
-        {/* Decorative circles */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-teal-600 rounded-full opacity-30"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-teal-800 rounded-full opacity-20"></div>
-        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-teal-500 rounded-full opacity-25"></div>
-
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl font-bold mb-4">About US</h1>
-          <p className="text-teal-100 mb-6 max-w-2xl mx-auto">
-            For no time wise pregnant until for itself porta justo congue pitre
-            pretium ligula
-          </p>
-          <div className="flex items-center justify-center gap-2 text-sm">
-            <a href="/" className="hover:text-teal-200 transition">
-              Home
-            </a>
-            <span>&gt;</span>
-            <span>About</span>
-          </div>
-        </div>
-      </div>
+      <ContactHero
+      title="About Us"
+      subtitle="Learn more about our company and values."
+      currentPage="About"
+    />
 
       {/* Who We Are Section */}
       <div className="max-w-7xl mx-auto  py-16">

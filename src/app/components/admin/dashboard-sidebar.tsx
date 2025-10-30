@@ -32,47 +32,47 @@ const menuItems = [
   {
     title: "Dashboards",
     icon: LayoutDashboard,
-    href: "/dashboard",
-  },
-  {
+      href: "/admin-dashboard",
+    },
+    {
     title: "Users Management",
     icon: Users,
-    href: "/dashboard/users",
+    href: "/admin-dashboard/users",
   },
   {
     title: "Listings Management",
     icon: Car,
-    href: "/dashboard/listings",
+    href: "/admin-dashboard/listings",
   },
   {
     title: "Transactions",
     icon: CreditCard,
-    href: "/dashboard/transactions",
+    href: "/admin-dashboard/transactions",
   },
   {
-    title: "Analytics & Reports",
+    title: "Withdrawals",
     icon: BarChartHorizontalIcon,
-    href: "/dashboard/analytics",
+    href: "/admin-dashboard/withdrawals",
   },
   {
-    title: "Notificatons",
+    title: "Notifications",
     icon: BellIcon,
-    href: "/dashboard/notifications",
+    href: "/admin-dashboard/notifications",
   },
   {
     title: "Category & Content",
     icon: MdOutlineCategory,
-    href: "/dashboard/category",
+    href: "/admin-dashboard/category",
   },
   {
     title: "Setting",
     icon: Settings,
-    href: "/dashboard/settings",
+    href: "/admin-dashboard/setting",
   },
   {
     title: "Profile",
     icon: User,
-    href: "/dashboard/profile",
+    href: "/admin-dashboard/profile",
   },
 ]
 
@@ -94,7 +94,7 @@ export function DashboardSidebar() {
             <Image src="/dashboard-logo.svg" alt="dashboard logo" height={9} width={154}/>
           </Link>
         )}
-        <Button variant="ghost" size="icon" onClick={() => setCollapsed(!collapsed)} className="h-8 w-8 ml-16">
+        <Button variant="ghost" size="icon" onClick={() => setCollapsed(!collapsed)} className="h-8 w-8 md:ml-12">
           {collapsed ? <ChevronRight className="h-4 w-4 " /> : <ChevronLeft className="h-4 w-4 " />}
         </Button>
       </div>

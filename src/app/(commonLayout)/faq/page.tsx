@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 "use client"; // This is a client component because it uses state for the accordion
 
+import ContactHero from '@/app/components/reusabeCard/allHeroSection';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -77,17 +78,11 @@ const FAQPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="bg-teal-600 text-white text-center py-20">
-        <h1 className="text-5xl font-bold">Frequently Asked Questions</h1>
-        <p className="mt-4 max-w-2xl mx-auto text-gray-200">
-          For no time wise pregnant until for itself porta justo congue pure pretium ligula
-        </p>
-        <nav className="mt-6 text-sm">
-          <a href="/" className="hover:underline">Home</a>
-          <span className="mx-2">&gt;</span>
-          <span>FAQ</span>
-        </nav>
-      </header>
+      <ContactHero
+      title="FREQUENTLY ASKED QUESTIONS"
+      subtitle="Reach out to us for any inquiries or support."
+      currentPage="FAQ"
+    />
 
       <main className="max-w-7xl mx-auto  py-24">
         {/* FAQ Section */}
