@@ -416,6 +416,15 @@ import {
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 const AllCarsPage = () => {
   const [carTypes, setCarTypes] = useState<"new" | "used">("used");
@@ -756,62 +765,117 @@ const AllCarsPage = () => {
 
           {/* Right Content */}
           <div className="col-span-1 lg:col-span-4">
-            <Card className="group relative cursor-pointer hover:border-teal-500 overflow-hidden  bg-card transition-all duration-300 hover:shadow-lg">
-              <div className="flex flex-col lg:flex-row items-center gap-4 p-4">
-                {/* Car Image */}
-                <div className="relative h-32 w-48 flex-shrink-0 overflow-hidden rounded-lg">
-                  <img
-                    src={"/red-luxury-sedan.jpg"}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
+            <div className="flex flex-col gap-y-3">
 
-                {/* Car Details */}
-                <div className="relative">
-                  <div>
-                    <div className="mb-2 flex justify-between">
-                      <h3 className="text-xl font-semibold text-card-foreground">
-                        Luxury Sedan
-                      </h3>
-                    </div>
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((car) => (
+              <Card
+                key={car}
+                className="group relative cursor-pointer hover:border-teal-500 overflow-hidden bg-card transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="flex flex-col lg:flex-row items-center gap-4 p-4">
+                  {/* Car Image */}
+                  <div className="relative h-32 w-48 flex-shrink-0 overflow-hidden rounded-lg">
+                    <img
+                      src="/red-luxury-sedan.jpg"
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      alt="Luxury Sedan"
+                    />
+                  </div>
 
-                    <p className="mb-3 text-2xl font-bold text-teal-600">
-                      $500
-                    </p>
-
-                    <div className="mb-3 flex items-center gap-1 text-sm text-muted-foreground">
-                      <MapPin className="h-4 w-4" />
-                      <span>dhaka</span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1.5">
-                        <Gauge className="h-4 w-4" />
-                        <span>500 km</span>
+                  {/* Car Details */}
+                  <div className="relative">
+                    <div>
+                      <div className="mb-2 flex justify-between">
+                        <h3 className="text-xl font-semibold text-card-foreground">
+                          Luxury Sedan
+                        </h3>
                       </div>
-                      <div className="flex items-center gap-1.5">
-                        <Fuel className="h-4 w-4" />
-                        <span>Gas</span>
+
+                      <p className="mb-3 text-2xl font-bold text-teal-600">
+                        $500
+                      </p>
+
+                      <div className="mb-3 flex items-center gap-1 text-sm text-muted-foreground">
+                        <MapPin className="h-4 w-4" />
+                        <span>Dhaka</span>
                       </div>
-                      <div className="flex items-center gap-1.5">
-                        <Settings className="h-4 w-4" />
-                        <span>Automatic</span>
+
+                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-1.5">
+                          <Gauge className="h-4 w-4" />
+                          <span>500 km</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <Fuel className="h-4 w-4" />
+                          <span>Gas</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <Settings className="h-4 w-4" />
+                          <span>Automatic</span>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* View Details Button */}
+                  <div className="absolute bottom-3 lg:bottom-6 right-2 lg:right-4">
+                    <Button
+                      size="icon"
+                      className="h-10 w-10 rounded-full bg-teal-600 text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg"
+                    >
+                      <ArrowRight className="h-5 w-5" />
+                    </Button>
+                  </div>
                 </div>
-                {/* View Details Button */}
-                <div className="absolute bottom-3 lg:bottom-6 right-2 lg:right-4">
-                  <Button
-                    size="icon"
-                    className="h-10 w-10 rounded-full bg-teal-600 text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg"
-                    // onClick={onViewDetails}
-                  >
-                    <ArrowRight className="h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            ))}
+            </div>
+
+            {/*  Pagination */}
+            <div className="flex justify-start mt-5 lg:mt-8">
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <PaginationPrevious className="pointer-events-none opacity-50" />
+                  </PaginationItem>
+
+                  <PaginationItem>
+                    <PaginationLink
+                      isActive
+                      className="bg-[#00695C] text-white cursor-pointer rounded-md"
+                    >
+                      1
+                    </PaginationLink>
+                  </PaginationItem>
+
+                  <PaginationItem>
+                    <PaginationLink className="cursor-pointer">
+                      2
+                    </PaginationLink>
+                  </PaginationItem>
+
+                  <PaginationItem>
+                    <PaginationLink className="cursor-pointer">
+                      3
+                    </PaginationLink>
+                  </PaginationItem>
+
+                  <PaginationItem>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+
+                  <PaginationItem>
+                    <PaginationLink className="cursor-pointer">
+                      8
+                    </PaginationLink>
+                  </PaginationItem>
+
+                  <PaginationItem>
+                    <PaginationNext className="cursor-pointer" />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
+            </div>
           </div>
         </div>
       </Container>
