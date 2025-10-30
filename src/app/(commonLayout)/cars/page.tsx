@@ -1,11 +1,13 @@
-import AllCars from "@/app/components/pages/AllCars";
+import AllCars from "@/app/components/pages/cars/AllCars";
+import AllCarsPage from "@/app/components/pages/cars/AllCarsPage";
 import Container from "@/app/components/shared/Container";
 
-const AllCarsPage = () => {
+const AllCarsPages = () => {
   return (
     <Container>
       <div className="container mx-auto">
-        <AllCars />
+        <AllCarsPage />
+        {/* <AllCars /> */}
       </div>
     </Container>
   );
