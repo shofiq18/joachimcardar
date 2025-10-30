@@ -10,6 +10,14 @@ interface CarCardProps {
 }
 
 const CarCard: React.FC<CarCardProps> = ({ car }) => {
+
+  const router = useRouter();
+
+  // Navigate to detail page using car.id
+  const handleViewDetails = () => {
+    if (!car.id) return; // safety
+    router.push(`/cars/${car.id}`);
+  };
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
       <div className="relative">
