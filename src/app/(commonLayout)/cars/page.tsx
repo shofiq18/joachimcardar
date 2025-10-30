@@ -1,11 +1,14 @@
-export default async function CarDetailPage() {
-   
- 
+import AllCars from "@/app/components/pages/AllCars";
+import Container from "@/app/components/shared/Container";
 
+const AllCarsPage = () => {
   return (
-    <div className="min-h-screen max-w-7xl mx-auto p-6 my-12">
-      <h1>All Cars Page </h1>
-      {/* Add more details as needed */}
-    </div>
+    <Container>
+      <div className="container mx-auto">
+        <AllCars />
+      </div>
+    </Container>
   );
-}
+};
+
+export default AllCarsPage;
