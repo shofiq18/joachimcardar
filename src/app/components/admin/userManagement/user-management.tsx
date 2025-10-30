@@ -1,7 +1,11 @@
+
+
+
+
 "use client"
 
 import { useState, useMemo } from "react"
-import { Search, ChevronDown, MoreVertical } from "lucide-react"
+import { Search, ChevronDown, MoreVertical, Filter, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
@@ -26,7 +30,7 @@ const mockUsers: User[] = [
     email: "felicia.reid@example.com",
     role: "Dealer",
     status: "Active",
-    joined: "May 8, 2014",
+    joined: "May 9, 2014",
     purchases: 2,
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dianne",
   },
@@ -56,7 +60,7 @@ const mockUsers: User[] = [
     email: "debra.holt@example.com",
     role: "Dealer",
     status: "Verified",
-    joined: "May 8, 2014",
+    joined: "May 9, 2014",
     purchases: 0,
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jacob",
   },
@@ -149,6 +153,8 @@ export default function UserManagementPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedRole, setSelectedRole] = useState<UserRole | "All">("All")
   const [selectedStatus, setSelectedStatus] = useState<UserStatus | "All">("All")
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 10
 
   const filteredUsers = useMemo(() => {
     return mockUsers.filter((user) => {
@@ -161,12 +167,26 @@ export default function UserManagementPage() {
     })
   }, [searchTerm, selectedRole, selectedStatus])
 
+  const totalPages = Math.ceil(filteredUsers.length / itemsPerPage)
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const paginatedUsers = filteredUsers.slice(startIndex, endIndex)
+
+  const handleFilterChange = (callback: () => void) => {
+    callback()
+    setCurrentPage(1)
+  }
+
   return (
     <div className="space-y-6 p-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">User Management</h1>
-        <p className="mt-1 text-gray-600">Manage all users, buyers, sellers, and dealers</p>
+        <h1 className="text-2xl font-semibold mb-2 text-[#2D2D2D]">User Management</h1>
+        <p className="mt-1 text-base text-[#636F85]">Manage all users, buyers, sellers, and dealers</p>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <h2 className="text-lg font-semibold text-[#2D2D2D]">All Users ({filteredUsers.length})</h2>
       </div>
 
       {/* Search and Filters */}
@@ -177,23 +197,25 @@ export default function UserManagementPage() {
             type="text"
             placeholder="Search users by name or email..."
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => handleFilterChange(() => setSearchTerm(e.target.value))}
             className="w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-4 text-sm text-gray-900 placeholder-gray-500 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
           />
         </div>
 
         <div className="flex gap-3">
+
           {/* Role Filter */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="gap-2 border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent">
+                 <Filter className="h-4 w-4" /> 
                 {selectedRole === "All" ? "All Roles" : selectedRole}
                 <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-40">
               <DropdownMenuItem
-                onClick={() => setSelectedRole("All")}
+                onClick={() => handleFilterChange(() => setSelectedRole("All"))}
                 className={selectedRole === "All" ? "bg-gray-100" : ""}
               >
                 <span className="flex items-center gap-2">
@@ -204,7 +226,7 @@ export default function UserManagementPage() {
               {["Buyer", "Seller", "Dealer"].map((role) => (
                 <DropdownMenuItem
                   key={role}
-                  onClick={() => setSelectedRole(role as UserRole)}
+                  onClick={() => handleFilterChange(() => setSelectedRole(role as UserRole))}
                   className={selectedRole === role ? "bg-gray-100" : ""}
                 >
                   <span className="flex items-center gap-2">
@@ -226,7 +248,7 @@ export default function UserManagementPage() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-40">
               <DropdownMenuItem
-                onClick={() => setSelectedStatus("All")}
+                onClick={() => handleFilterChange(() => setSelectedStatus("All"))}
                 className={selectedStatus === "All" ? "bg-gray-100" : ""}
               >
                 <span className="flex items-center gap-2">
@@ -237,7 +259,7 @@ export default function UserManagementPage() {
               {["Active", "Verified", "Suspended"].map((status) => (
                 <DropdownMenuItem
                   key={status}
-                  onClick={() => setSelectedStatus(status as UserStatus)}
+                  onClick={() => handleFilterChange(() => setSelectedStatus(status as UserStatus))}
                   className={selectedStatus === status ? "bg-gray-100" : ""}
                 >
                   <span className="flex items-center gap-2">
@@ -266,7 +288,7 @@ export default function UserManagementPage() {
             </tr>
           </thead>
           <tbody>
-            {filteredUsers.map((user) => (
+            {paginatedUsers.map((user) => (
               <tr key={user.id} className="border-b border-gray-200 hover:bg-gray-50">
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-3">
@@ -275,10 +297,17 @@ export default function UserManagementPage() {
                   </div>
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-600">{user.email}</td>
-                <td className="px-6 py-4 text-sm text-gray-600">{user.role}</td>
+                
                 <td className="px-6 py-4">
                   <span
-                    className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${getStatusColor(user.status)}`}
+                    className={`inline-block border  rounded-sm px-4 py-2 text-xs font-medium `}
+                  >
+                    {user.role}
+                  </span>
+                </td>
+                <td className="px-6 py-4">
+                  <span
+                    className={`inline-block rounded-sm px-4 py-2 text-xs font-medium ${getStatusColor(user.status)}`}
                   >
                     {user.status}
                   </span>
@@ -305,9 +334,48 @@ export default function UserManagementPage() {
         </table>
       </div>
 
-      {/* Results Count */}
-      <div className="text-sm text-gray-600">
-        Showing {filteredUsers.length} of {mockUsers.length} users
+      <div className="flex items-center justify-between">
+        <div className="text-sm text-gray-600">
+          Showing {startIndex + 1} to {Math.min(endIndex, filteredUsers.length)} of {filteredUsers.length} users
+        </div>
+
+        <div className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="gap-1"
+          >
+            <ChevronLeft className="h-4 w-4" />
+            Previous
+          </Button>
+
+          <div className="flex gap-1">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <Button
+                key={page}
+                variant={currentPage === page ? "default" : "outline"}
+                size="sm"
+                onClick={() => setCurrentPage(page)}
+                className={currentPage === page ? "bg-teal-600 text-white" : ""}
+              >
+                {page}
+              </Button>
+            ))}
+          </div>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className="gap-1"
+          >
+            Next
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
     </div>
   )

@@ -79,8 +79,8 @@ export function RecentListingsTable() {
                   <td className="px-6 py-4 text-sm text-gray-900 font-medium">{listing.price}</td>
                   <td className="px-6 py-4 text-sm">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        listing.status === "Active" ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700"
+                      className={`px-4 py-2 rounded-sm text-xs font-medium ${
+                        listing.status === "Active" ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-500"
                       }`}
                     >
                       {listing.status}

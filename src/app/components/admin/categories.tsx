@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { Plus, Edit2, Trash2, X } from "lucide-react"
+import { Plus, Edit2, Trash2, X, Edit } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Image from "next/image"
 
 interface Category {
   id: string
@@ -12,7 +13,6 @@ interface Category {
   metric: string
   metricValue: string
   status: "Active" | "Inactive"
-  bgColor: string
   iconColor: string
 }
 
@@ -27,81 +27,73 @@ const CATEGORIES: Category[] = [
   {
     id: "1",
     name: "Sedan",
-    icon: "🚗",
+    icon: "/category.svg",
     metric: "Total Sent",
     metricValue: "1,234",
     status: "Active",
-    bgColor: "bg-blue-100",
     iconColor: "text-blue-500",
   },
   {
     id: "2",
     name: "SUV",
-    icon: "🚙",
+    icon: "/convertile.svg",
     metric: "This Month",
     metricValue: "856",
     status: "Active",
-    bgColor: "bg-green-100",
     iconColor: "text-green-500",
   },
   {
     id: "3",
     name: "Truck",
-    icon: "🚚",
+    icon: "/category.svg",
     metric: "Avg. Open Rate",
     metricValue: "42%",
     status: "Active",
-    bgColor: "bg-yellow-100",
     iconColor: "text-yellow-500",
   },
   {
     id: "4",
     name: "Electric Vehicle",
-    icon: "⚡",
+    icon: "/electril.svg",
     metric: "Avg. Open Rate",
     metricValue: "38%",
     status: "Active",
-    bgColor: "bg-purple-100",
     iconColor: "text-purple-500",
   },
   {
     id: "5",
     name: "Sports",
-    icon: "🏎️",
+    icon: "/category.svg",
     metric: "180 listings",
     metricValue: "",
     status: "Active",
-    bgColor: "bg-red-100",
     iconColor: "text-red-500",
   },
   {
     id: "6",
     name: "Luxury",
-    icon: "👑",
+    icon: "/category.svg",
     metric: "145 listings",
     metricValue: "",
     status: "Active",
-    bgColor: "bg-indigo-100",
     iconColor: "text-indigo-500",
   },
   {
     id: "7",
     name: "Convertible",
-    icon: "🚗",
+    icon: "/convertile.svg",
     metric: "98 listings",
     metricValue: "",
     status: "Active",
-    bgColor: "bg-pink-100",
     iconColor: "text-pink-500",
   },
   {
     id: "8",
     name: "Hybrid",
-    icon: "⚡",
+    icon: "/hybrid.svg",
     metric: "167 listings",
     metricValue: "",
     status: "Active",
-    bgColor: "bg-cyan-100",
     iconColor: "text-cyan-500",
   },
 ]
@@ -127,11 +119,10 @@ export default function CategoriesPage() {
       const newCategory: Category = {
         id: Date.now().toString(),
         name: categoryName,
-        icon: "🚗",
+        icon: "/category.svg",
         metric: "Total Sent",
         metricValue: "0",
         status: "Active",
-        bgColor: "bg-gray-100",
         iconColor: "text-gray-500",
       }
       setCategories([...categories, newCategory])
@@ -166,15 +157,15 @@ export default function CategoriesPage() {
     <div className="min-h-screen bg-gray-50 p-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Category & Content Management</h1>
-        <p className="text-gray-600 mt-2">Manage vehicle categories, brands, and content</p>
+        <h1 className="text-2xl font-semibold text-[#2D2D2D]">Category & Content Management</h1>
+        <p className="text-[#636F85] text-base mt-4">Manage vehicle categories, brands, and content</p>
       </div>
 
       {/* Vehicle Categories Section */}
       <div className="mb-12">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">Vehicle Categories</h2>
-          <Button onClick={() => setShowCategoryModal(true)} className="bg-teal-700 hover:bg-teal-800 text-white">
+          <h2 className="text-xl font-bold text-[#2D2D2D]">Vehicle Categories</h2>
+          <Button onClick={() => setShowCategoryModal(true)} className="bg-[#00695C] hover:bg-teal-800 text-white">
             <Plus className="w-5 h-5 mr-2" />
             Add Category
           </Button>
@@ -188,14 +179,14 @@ export default function CategoriesPage() {
               className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className={`${category.bgColor} p-3 rounded-lg text-2xl`}>{category.icon}</div>
+                <Image width={64} height={64} src={category.icon} alt={category.name} className={`p-3 rounded-lg text-4xl`} />
                 <div className="flex gap-2">
                   <button className="text-gray-400 hover:text-gray-600">
-                    <Edit2 className="w-4 h-4" />
+                    <Edit className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => handleDeleteCategory(category.id)}
-                    className="text-gray-400 hover:text-red-600"
+                    className=" text-red-400"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -214,8 +205,8 @@ export default function CategoriesPage() {
       {/* Vehicle Brands Section */}
       <div>
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">Vehicle Brands</h2>
-          <Button onClick={() => setShowBrandModal(true)} className="bg-teal-700 hover:bg-teal-800 text-white">
+          <h2 className="text-2xl font-bold text-[#2D2D2D]">Vehicle Brands</h2>
+          <Button onClick={() => setShowBrandModal(true)} className="bg-[#00695C] hover:bg-teal-800 text-white">
             <Plus className="w-5 h-5 mr-2" />
             Add Brand
           </Button>
@@ -238,26 +229,26 @@ export default function CategoriesPage() {
                   <td className="px-6 py-4 text-sm text-gray-900">{brand.name}</td>
                   <td className="px-6 py-4 text-sm text-gray-600">{brand.activeListings}</td>
                   <td className="px-6 py-4">
-                    <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-medium rounded">
+                    <span className="inline-block px-4 py-2 bg-green-100 text-green-700 text-xs font-medium rounded">
                       Active
                     </span>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex gap-3">
-                      <button className="text-gray-400 hover:text-teal-600 flex items-center gap-1">
+                      <button className="px-3 rounded-sm py-1 border border-gray-300 text-gray-600 flex items-center gap-1">
                         <Edit2 className="w-4 h-4" />
                         <span className="text-xs">Edit</span>
                       </button>
                       <button
                         onClick={() => handleDeleteBrand(brand.id)}
-                        className="text-gray-400 hover:text-red-600 flex items-center gap-1"
+                        className=" px-3 rounded-sm py-1 border border-red-300 text-red-400 flex items-center gap-1"
                       >
                         <Trash2 className="w-4 h-4" />
-                        <span className="text-xs">Delete</span>
+                        <span className="text-sm">Delete</span>
                       </button>
                     </div>
-                  </td>
-                </tr>
+                    </td>
+                    </tr>
               ))}
             </tbody>
           </table>
@@ -285,7 +276,7 @@ export default function CategoriesPage() {
                 className="w-full"
               />
             </div>
-            <Button onClick={handleAddCategory} className="w-full bg-teal-700 hover:bg-teal-800 text-white">
+            <Button onClick={handleAddCategory} className="w-full bg-[#00695C] hover:bg-teal-800 text-white">
               Create Category
             </Button>
           </div>
@@ -313,7 +304,7 @@ export default function CategoriesPage() {
                 className="w-full"
               />
             </div>
-            <Button onClick={handleAddBrand} className="w-full bg-teal-700 hover:bg-teal-800 text-white">
+            <Button onClick={handleAddBrand} className="w-full bg-[#00695C] hover:bg-teal-800 text-white">
               Create Brand
             </Button>
           </div>

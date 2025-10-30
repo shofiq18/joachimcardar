@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Search, RefreshCw } from "lucide-react"
+import { Search, RefreshCw, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 interface Transaction {
   id: string
@@ -133,49 +134,49 @@ export default function TransactionsPage() {
       <div className=" mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Transactions & Payments</h1>
-          <p className="text-gray-600 mt-2">Monitor all payment transactions and revenue</p>
+          <h1 className="text-2xl font-semibold text-[#2D2D2D]">Transactions & Payments</h1>
+          <p className="text-[#636F85] text-base  mt-4">Monitor all payment transactions and revenue</p>
         </div>
 
         {/* Stat Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div className="bg-white rounded-lg md:p-6 2xl:p-10 shadow-sm border border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 text-sm">Total Listings</p>
-                <p className="text-2xl font-bold text-gray-900 mt-2">$160,600</p>
+                <p className="text-gray-600 text-base">Total Listings</p>
+                <p className="text-xl font-semibold text-[#2D2D2D] mt-2">$160,600</p>
               </div>
-              <div className="text-3xl">💵</div>
+              <div className="text-3xl"><Image src="/dollar.svg" alt="dollar" width={48} height={48} /></div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div className="bg-white rounded-lg md:p-6 2xl:p-10 shadow-sm border border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 text-sm">Commission Earned</p>
-                <p className="text-2xl font-bold text-gray-900 mt-2">$8,030</p>
+                <p className="text-gray-600 text-base">Commission Earned</p>
+                <p className="text-xl font-semibold text-[#2D2D2D] mt-2">$8,030</p>
               </div>
-              <div className="text-3xl">📈</div>
+              <div className="text-3xl"><Image src="/tranding.svg" alt="dollar" width={48} height={48} /></div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div className="bg-white rounded-lg md:p-6 2xl:p-10 shadow-sm border border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 text-sm">Completed</p>
-                <p className="text-2xl font-bold text-gray-900 mt-2">4 transactions</p>
+                <p className="text-gray-600 text-base">Completed</p>
+                <p className="text-xl font-semibold text-[#2D2D2D] mt-2">4 transactions</p>
               </div>
-              <div className="text-3xl">✅</div>
+              <div className="text-3xl"><Image src="/complete.svg" alt="check" width={48} height={48} /></div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div className="bg-white rounded-lg md:p-6 2xl:p-10 shadow-sm border border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 text-sm">Pending</p>
-                <p className="text-2xl font-bold text-gray-900 mt-2">1 transactions</p>
+                <p className="text-gray-600 text-base">Pending</p>
+                <p className="text-xl font-semibold text-[#2D2D2D] mt-2">1 transactions</p>
               </div>
-              <div className="text-3xl">⏳</div>
+              <div className="text-3xl"><Image src="/users.svg" alt="pending" width={48} height={48} /></div>
             </div>
           </div>
         </div>
@@ -252,7 +253,7 @@ export default function TransactionsPage() {
                     <td className="px-6 py-4 text-sm text-gray-900">${tx.amount.toLocaleString()}</td>
                     <td className="px-6 py-4 text-sm text-gray-900">${tx.commission.toLocaleString()}</td>
                     <td className="px-6 py-4 text-sm">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(tx.status)}`}>
+                      <span className={`px-4 py-2 rounded-sm text-xs font-medium ${getStatusColor(tx.status)}`}>
                         {tx.status}
                       </span>
                     </td>
