@@ -381,14 +381,6 @@ const Navbar = () => {
             Contact
           </a>
           <a
-            href="/blog"
-            className={`transition ${
-              isActive("/blog") ? "text-teal-400 font-semibold" : "text-white hover:text-teal-400"
-            }`}
-          >
-            Blog
-          </a>
-          <a
             href="/faq"
             className={`transition ${
               isActive("/faq") ? "text-teal-400 font-semibold" : "text-white hover:text-teal-400"
@@ -515,7 +507,7 @@ const Navbar = () => {
                 Sign In
               </button>
             </Link>
-            <Link href="/add-listing">
+            {/* <Link href="/add-listing">
               <button
                 className={`px-6 py-2 cursor-pointer rounded-md transition font-medium ${
                   isActive("/add-listing")
@@ -525,7 +517,7 @@ const Navbar = () => {
               >
                 Add Listing
               </button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </nav>
