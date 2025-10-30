@@ -4,13 +4,13 @@ import React from "react";
 import { MapPin } from "lucide-react";
 import { Car } from "@/types";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface CarCardProps {
   car: Car;
 }
 
 const CarCard: React.FC<CarCardProps> = ({ car }) => {
-
   const router = useRouter();
 
   // Navigate to detail page using car.id

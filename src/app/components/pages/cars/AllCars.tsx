@@ -66,6 +66,9 @@ const AllCars = () => {
     setFilters((prev) => ({ ...prev, ...newFilter }));
   };
 
+
+  
+
   return (
     <div>
       {/* top filtering */}
