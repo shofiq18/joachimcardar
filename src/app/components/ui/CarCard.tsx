@@ -4,12 +4,21 @@ import React from "react";
 import { MapPin } from "lucide-react";
 import { Car } from "@/types";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface CarCardProps {
   car: Car;
 }
 
 const CarCard: React.FC<CarCardProps> = ({ car }) => {
+
+  const router = useRouter();
+
+  // Navigate to detail page using car.id
+  const handleViewDetails = () => {
+    if (!car.id) return; // safety
+    router.push(`/cars/${car.id}`);
+  };
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
       <div className="relative">
@@ -71,7 +80,7 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
             <MapPin size={20} className="mr-1 text-gray-600" /> {car.location}
           </span>
         </div>
-        <button className="w-full bg-[#00695C] text-white py-2 rounded-md hover:bg-teal-700 transition font-medium">
+        <button onClick={handleViewDetails} className="w-full bg-[#00695C] text-white py-2 rounded-md hover:bg-teal-700 transition font-medium">
           View Details
         </button>
       </div>

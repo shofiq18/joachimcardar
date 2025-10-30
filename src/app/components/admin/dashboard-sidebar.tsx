@@ -5,19 +5,28 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import {
   LayoutDashboard,
-  Building2,
   Users,
-  Ban,
-  ShieldCheck,
   CreditCard,
-  Receipt,
   Settings,
   LogOut,
   ChevronLeft,
   ChevronRight,
+  Car,
+  PersonStandingIcon,
+  User,
+  BellIcon,
+  AlignVerticalJustifyCenterIcon,
+  AlignHorizontalJustifyStartIcon,
+  ChartBar,
+  ChartColumnBigIcon,
+  ChartNoAxesCombinedIcon,
+  BarChartHorizontalIcon,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import { MdAnalytics, MdNotifications, MdOutlineCategory } from "react-icons/md"
+import { BsPersonFillExclamation } from "react-icons/bs"
 
 const menuItems = [
   {
@@ -26,44 +35,44 @@ const menuItems = [
     href: "/dashboard",
   },
   {
-    title: "All properties",
-    icon: Building2,
-    href: "/dashboard/properties",
-  },
-  {
-    title: "All Users",
+    title: "Users Management",
     icon: Users,
     href: "/dashboard/users",
   },
   {
-    title: "Blocked Properties",
-    icon: Ban,
-    href: "/dashboard/blocked",
+    title: "Listings Management",
+    icon: Car,
+    href: "/dashboard/listings",
   },
   {
-    title: "Verify property",
-    icon: ShieldCheck,
-    href: "/dashboard/verify",
-  },
-  {
-    title: "Subscriptions",
+    title: "Transactions",
     icon: CreditCard,
-    href: "/dashboard/subscriptions",
+    href: "/dashboard/transactions",
   },
   {
-    title: "Plan Management",
-    icon: CreditCard,
-    href: "/dashboard/plan-management",
+    title: "Analytics & Reports",
+    icon: BarChartHorizontalIcon,
+    href: "/dashboard/analytics",
   },
   {
-    title: "Payment History",
-    icon: Receipt,
-    href: "/dashboard/payments",
+    title: "Notificatons",
+    icon: BellIcon,
+    href: "/dashboard/notifications",
+  },
+  {
+    title: "Category & Content",
+    icon: MdOutlineCategory,
+    href: "/dashboard/category",
   },
   {
     title: "Setting",
     icon: Settings,
     href: "/dashboard/settings",
+  },
+  {
+    title: "Profile",
+    icon: User,
+    href: "/dashboard/profile",
   },
 ]
 
@@ -75,24 +84,24 @@ export function DashboardSidebar() {
     <aside
       className={cn(
         "flex flex-col bg-white border-r border-gray-200 transition-all duration-300",
-        collapsed ? "w-16" : "w-64",
+        collapsed ? "w-16" : "w-68",
       )}
     >
       {/* Logo and Toggle */}
-      <div className="flex items-center justify-between p-4 border-b border-gray-200">
+      <div className="flex items-center justify-center p-4 ">
         {!collapsed && (
-          <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold text-amber-700">iRendity</span>
+          <Link href="/" className="flex items-center ml-8">
+            <Image src="/dashboard-logo.svg" alt="dashboard logo" height={9} width={154}/>
           </Link>
         )}
-        <Button variant="ghost" size="icon" onClick={() => setCollapsed(!collapsed)} className="h-8 w-8">
-          {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+        <Button variant="ghost" size="icon" onClick={() => setCollapsed(!collapsed)} className="h-8 w-8 ml-16">
+          {collapsed ? <ChevronRight className="h-4 w-4 " /> : <ChevronLeft className="h-4 w-4 " />}
         </Button>
       </div>
 
       {/* Navigation Menu */}
       <nav className="flex-1 overflow-y-auto py-4">
-        <ul className="space-y-1 px-2">
+        <ul className="space-y-2 md:px-4 2xl:px-5">
           {menuItems.map((item) => {
             const isActive = pathname === item.href
             const Icon = item.icon
@@ -102,9 +111,9 @@ export function DashboardSidebar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
-                    isActive ? "bg-[#004E60] text-white" : "text-gray-700 hover:bg-gray-100",
-                    collapsed && "justify-center",
+                    "flex items-center gap-3 px-3 py-3 rounded-lg text-base font-medium transition-colors",
+                    isActive ? "bg-[#00695C] text-white" : "text-gray-700 hover:bg-gray-100",
+                    collapsed && "justify-center py-2",
                   )}
                 >
                   <Icon className="h-5 w-5 flex-shrink-0" />
@@ -117,15 +126,15 @@ export function DashboardSidebar() {
       </nav>
 
       {/* Logout Button */}
-      <div className="p-2 border-t border-gray-200">
+      <div className="p-4 ">
         <button
           className={cn(
-            "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-red-600 hover:bg-red-50 w-full transition-colors",
+            "flex items-center justify-center gap-3 px-3 py-2.5 rounded-lg text-lg text-center font-medium text-red-600 bg-red-50 w-full transition-colors",
             collapsed && "justify-center",
           )}
         >
           <LogOut className="h-5 w-5 flex-shrink-0" />
-          {!collapsed && <span>Log out</span>}
+          {!collapsed && <span className="">Log out</span>}
         </button>
       </div>
     </aside>
