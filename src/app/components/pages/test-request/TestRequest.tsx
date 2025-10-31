@@ -38,7 +38,6 @@ import {
 import Image from "next/image";
 import Container from "../../shared/Container";
 
-// --- ADD THESE IMPORTS ---
 import {
   Dialog,
   DialogContent,
@@ -53,10 +52,8 @@ export default function TestRequest() {
   const [date, setDate] = useState<Date>();
   const [time, setTime] = useState<string>();
 
-  // --- ADD STATE FOR DIALOG ---
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  // ----------------------------
 
   return (
     <>
@@ -79,7 +76,10 @@ export default function TestRequest() {
                   <CardContent className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="full-name">Full Name</Label>
-                      <Input id="full-name" placeholder="Enter your full name" />
+                      <Input
+                        id="full-name"
+                        placeholder="Enter your full name"
+                      />
                     </div>
 
                     <div className="space-y-2">
@@ -166,7 +166,9 @@ export default function TestRequest() {
                       Luxary Sedan
                     </h1>
                   </div>
-                  <p className="text-[#00695C] text-xl font-semibold">$45,000</p>
+                  <p className="text-[#00695C] text-xl font-semibold">
+                    $45,000
+                  </p>
                   <div className="flex items-center gap-1">
                     <MapPin className="h-4 w-4" />
                     <span className="text-gray-700">New York, NY</span>
