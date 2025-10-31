@@ -293,7 +293,7 @@ function App() {
                     </Button>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Checkbox
+                    <Checkbox 
                       id="subscribe"
                       checked={isSubscribed}
                       onCheckedChange={(checked) =>
@@ -321,8 +321,8 @@ function App() {
 
           <div className="mt-5">
             <div className="grid grid-cols1 md:grid-cols-3 gap-4">
-              {[1, 2, 3].map((car) => (
-                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
+              {[1, 2, 3].map((car,idx:number) => (
+                <div key={idx} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
                   <div className="relative">
                     <Image
                       src="/Fake.jpg"
