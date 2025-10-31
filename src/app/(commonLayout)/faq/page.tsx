@@ -84,7 +84,7 @@ const FAQPage: NextPage = () => {
       currentPage="FAQ"
     />
 
-      <main className="max-w-7xl mx-auto  py-24">
+      <main className="max-w-7xl mx-auto px-4 py-24">
         {/* FAQ Section */}
         <section className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column */}

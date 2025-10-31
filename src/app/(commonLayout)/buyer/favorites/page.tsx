@@ -93,7 +93,7 @@ export default function FavoritesPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto min-h-screen my-12">
+    <div className="max-w-7xl px-4 mx-auto min-h-screen my-12">
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold text-gray-900">Favourite cars</h1>

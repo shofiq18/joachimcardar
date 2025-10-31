@@ -244,7 +244,7 @@ export default function ChatsPage() {
 
   return (
     <div className="bg-gray-50 py-12">
-      <div className="flex max-w-7xl mx-auto">
+      <div className="flex max-w-7xl px-4 mx-auto">
         {/* Sidebar */}
         <div className="w-96 border-r border-gray-200 flex flex-col bg-white shadow-2xl rounded-2xl">
           {/* Header */}

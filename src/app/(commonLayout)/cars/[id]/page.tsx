@@ -23,6 +23,7 @@ import {
   ChevronDown,
   MessageSquare,
   CheckCircle2,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -33,6 +34,7 @@ function App() {
   const [isInteriorOpen, setIsInteriorOpen] = useState(true);
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(true);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false); // Modal state
 
   const images = [
     "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -263,14 +265,18 @@ function App() {
                   <Link href={"/test-request"}>
                     <Button
                       variant="outline"
-                      className="border-teal-600 cursor-pointer text-teal-600 hover:bg-teal-50"
+                      className="border-[#00695C] cursor-pointer text-[#00695C] hover:bg-teal-50"
                     >
                       Test Request
                     </Button>
                   </Link>
-                  <Button className="bg-teal-600 cursor-pointer hover:bg-teal-700 text-white">
-                    Booking
-                  </Button>
+                  {/* BOOKING BUTTON */}
+                    <Button
+                      onClick={() => setIsBookingModalOpen(true)}
+                      className="bg-[#00695C] cursor-pointer hover:bg-teal-700 text-white"
+                    >
+                      Booking
+                    </Button>
                 </div>
 
                 <Separator className="my-4" />
@@ -288,7 +294,7 @@ function App() {
                       onChange={(e) => setEmail(e.target.value)}
                       className="flex-1"
                     />
-                    <Button className="bg-teal-600 hover:bg-teal-700 text-white">
+                    <Button className="bg-[#00695C] hover:bg-teal-700 text-white">
                       Subscribe
                     </Button>
                   </div>
@@ -399,6 +405,76 @@ function App() {
             </div>
           </div>
         </div>
+
+        {/* ====================== BOOKING MODAL ====================== */}
+      {isBookingModalOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-8 z-50">
+          <div className="bg-gradient-to-b from-teal-50 to-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsBookingModalOpen(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            {/* Title */}
+            <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">
+              Payment Details
+            </h3>
+
+            {/* Details */}
+            <div className="space-y-4 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-600">Date</span>
+                <span className="font-medium text-gray-900">Thu, 20 May 2025</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Session Price</span>
+                <span className="font-medium text-gray-900">$18,000</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Tax (15%)</span>
+                <span className="font-medium text-gray-900">$1000</span>
+              </div>
+            </div>
+
+            {/* Total Price */}
+            <div className="mt-6 p-3 bg-white rounded-xl border border-teal-200 shadow-sm">
+              <div className="flex justify-between items-center">
+                <span className="font-semibold text-gray-900">Total price</span>
+                <span className="text-2xl font-bold text-[#00695C]">$19000</span>
+              </div>
+            </div>
+
+            {/* Benefits List */}
+            <div className="mt-6 space-y-2">
+              {[
+                "No setup fees or hidden costs",
+                "Cancel anytime with no penalties",
+                "Automatic rate switching included",
+                "Customer dashboard access",
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                  <CheckCircle2 className="h-4 w-4 text-teal-600 flex-shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Confirm Button */}
+            <Button
+              onClick={() => {
+                alert("Payment Confirmed!");
+                setIsBookingModalOpen(false);
+              }}
+              className="mt-8 w-full bg-[#00695C] hover:bg-teal-700 text-white font-medium py-4 rounded-sm"
+            >
+              Confirm and Pay
+            </Button>
+          </div>
+        </div>
+      )}
       </div>
     </div>
   );

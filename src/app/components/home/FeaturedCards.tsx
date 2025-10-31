@@ -9,7 +9,7 @@ import Link from "next/link";
 const FeaturedCars = () => {
   return (
     <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-start mb-12">
           <div>
             <h2 className="text-[40px] font-bold text-[#2D2D2D] mb-4">

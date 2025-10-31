@@ -1,6 +1,5 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import Link from 'next/link';
 import ContactHero from '@/app/components/reusabeCard/allHeroSection';
 
 const PrivacyPolicy: React.FC = () => {
@@ -15,8 +14,8 @@ const PrivacyPolicy: React.FC = () => {
       currentPage="Privacy Policy"
     />
       </div>
-      
-      <div className="max-w-7xl mx-auto mt-12  ">
+
+      <div className="max-w-7xl mx-auto px-4 mt-12">
         <div className="">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
             Privacy Policy– <span className="text-teal-600">MAW mobile auto welt</span>

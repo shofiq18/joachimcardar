@@ -14,7 +14,7 @@ const FAQ = () => {
 
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8 mb-8">
               {faqs.map((faq, index) => (

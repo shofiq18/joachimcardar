@@ -7,7 +7,7 @@ import Image from 'next/image';
 const WhyChooseUs = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-[40px] font-bold text-[#2D2D2D] flex justify-center  mb-12">Why Choose Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (

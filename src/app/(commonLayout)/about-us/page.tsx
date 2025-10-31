@@ -16,7 +16,7 @@ const AboutUs: React.FC = () => {
     />
 
       {/* Who We Are Section */}
-      <div className="max-w-7xl mx-auto  py-16">
+      <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="">
           <h2 className="text-4xl font-bold text-gray-900 mb-12">
             Who We Are?
@@ -104,7 +104,7 @@ const AboutUs: React.FC = () => {
 
       {/* How It Works Section */}
       <div className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto ">
+        <div className="max-w-7xl mx-auto px-4 ">
           <h2 className="text-[40px] font-bold text-[#2D2D2D] text-center mb-16">
             How It Works
           </h2>
@@ -174,7 +174,7 @@ const AboutUs: React.FC = () => {
         <div className="absolute top-0 right-0 w-96 h-96 bg-teal-800 rounded-full opacity-10 transform translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-500 rounded-full opacity-10 transform -translate-x-1/2 translate-y-1/2"></div>
 
-        <div className="max-w-7xl mx-auto  relative z-10">
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <div className="text-white">

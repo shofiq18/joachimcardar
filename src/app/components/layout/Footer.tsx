@@ -11,7 +11,7 @@ import Image from 'next/image';
 const Footer = () => {
   return (
     <footer className="bg-[#101010] text-white pt-12">
-      <div className="max-w-7xl mx-auto ">
+      <div className="max-w-7xl mx-auto px-4">
         <div className='flex justify-between'>
           <div className='mb-6'>
             <Image src="/Group.png" alt="Logo" width={60} height={50} />

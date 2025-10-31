@@ -17,7 +17,7 @@ const HeroSection = () => {
         Your browser does not support the video tag.
       </video>
       {/* <div className="absolute inset-0 bg-black bg-opacity-40"></div> */}
-      <div className="relative max-w-7xl mx-auto   h-full flex flex-col justify-center">
+      <div className="relative max-w-7xl mx-auto  px-4  h-full flex flex-col justify-center">
         <div className="max-w-5xl">
           <div className="inline-block bg-gray-700 bg-opacity-50 text-white text-sm px-4 py-1 rounded-full mb-4">
             WELCOME TO MAW MOBILE AUTO MALL

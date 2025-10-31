@@ -15,7 +15,7 @@ const TermsConditions: React.FC = () => {
     />
       </div>
 
-      <div className="max-w-7xl mx-auto mt-12  ">
+      <div className="max-w-7xl mx-auto px-4 mt-12">
         <div className="">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
             Terms & Conditions– <span className="text-teal-600">MAW mobile auto welt</span>

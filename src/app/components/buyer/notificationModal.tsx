@@ -63,7 +63,7 @@ export default function NotificationModal() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-65 right-90  bg-opacity-20 flex items-center justify-center z-50">
+    <div className="fixed inset-65 right-10  bg-opacity-20 flex items-center justify-center z-50">
       <div className="bg-white rounded-xl shadow-lg w-full max-w-md p-4">
         <div className="flex justify-between items-center border-b border-gray-200 pb-2 mb-4">
           <h2 className="text-lg font-bold text-gray-900">Notifications</h2>
