@@ -60,10 +60,30 @@ export default function TrackOrder() {
   const handleComplete = () => setCompletedStep(topSteps.length);
 
   const steps = [
-    { title: "Verified Payments", date: "Dec 15", time: "10:04 AM", address: "User Verified" },
-    { title: "Order is in Packing", date: "Dec 15", time: "15:20 PM", address: "Warehouse A" },
-    { title: "Orders are On Train", date: "Dec 15", time: "11:30 AM", address: "Station Port" },
-    { title: "Order Customs Port", date: "Dec 16", time: "14:40 PM", address: "Port Location" },
+    {
+      title: "Verified Payments",
+      date: "Dec 15",
+      time: "10:04 AM",
+      address: "User Verified",
+    },
+    {
+      title: "Order is in Packing",
+      date: "Dec 15",
+      time: "15:20 PM",
+      address: "Warehouse A",
+    },
+    {
+      title: "Orders are On Train",
+      date: "Dec 15",
+      time: "11:30 AM",
+      address: "Station Port",
+    },
+    {
+      title: "Order Customs Port",
+      date: "Dec 16",
+      time: "14:40 PM",
+      address: "Port Location",
+    },
   ];
 
   return (
@@ -75,7 +95,9 @@ export default function TrackOrder() {
           </h1>
 
           {loading ? (
-            <p className="text-gray-500 text-center py-10">Loading order status...</p>
+            <p className="text-gray-500 text-center py-10">
+              Loading order status...
+            </p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {/* Left: Car Image + Details */}
