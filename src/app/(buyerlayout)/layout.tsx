@@ -117,7 +117,7 @@ export default function DashboardLayout({
         </aside>
 
         {/* Main Content */}
-        <main className="p-12">{children}</main>
+        <main className="p-12 w-full">{children}</main>
       </div>
       </div>
       <Footer />

@@ -215,7 +215,7 @@ function App() {
 
                 <Separator className="my-4" />
 
-                <div className="border p-2 rounded-md mb-3">
+                <div className="border p-2 rounded-md mb-3 relative">
                   <h3 className="font-semibold text-gray-900 mb-3">
                     Seller Information:
                   </h3>
@@ -241,18 +241,21 @@ function App() {
                     </div>
                     <div className="flex items-center gap-2 text-gray-700">
                       <Mail className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                      <div className="flex justify-between">
+                      <div className="flex justify-between gap-4">
                         <span className="truncate">sales@autoworld.ik</span>
                       </div>
-                      <Link href={`/seller-information/1`}>
-                        <Button
-                          variant="link"
-                          className="text-teal-600 cursor-pointer hover:text-teal-700 p-0 h-auto mb-4"
-                        >
-                          View Profile
-                        </Button>
-                      </Link>
                     </div>
+                  </div>
+
+                  <div className="absolute right-3 bottom-2">
+                    <Link href={`/seller-information/1`}>
+                      <Button
+                        variant="link"
+                        className="text-teal-600 cursor-pointer hover:text-teal-700 p-0 h-auto mb-4"
+                      >
+                        View Profile
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 
@@ -311,8 +314,6 @@ function App() {
             </Card>
           </div>
         </div>
-
-        
 
         {/* features cars */}
         <div className="mt-6 lg:mt-12">
