@@ -24,6 +24,7 @@ import {
   MessageSquare,
   CheckCircle2,
 } from "lucide-react";
+import Link from "next/link";
 
 function App() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -182,7 +183,6 @@ function App() {
               </Card>
             </div>
           </div>
-
           <div className="lg:col-span-1 space-y-4">
             <Card className="sticky top-4">
               <CardContent className="p-6">
@@ -214,7 +214,7 @@ function App() {
 
                 <Separator className="my-4" />
 
-                <div className="border p-2 rounded-md mb-3" >
+                <div className="border p-2 rounded-md mb-3">
                   <h3 className="font-semibold text-gray-900 mb-3">
                     Seller Information:
                   </h3>
@@ -242,14 +242,15 @@ function App() {
                       <Mail className="h-4 w-4 text-gray-400 flex-shrink-0" />
                       <div className="flex justify-between">
                         <span className="truncate">sales@autoworld.ik</span>
-
                       </div>
+                      <Link href={`/seller-information/1`}>
                         <Button
                           variant="link"
-                          className="text-teal-600 hover:text-teal-700 p-0 h-auto mb-4"
+                          className="text-teal-600 cursor-pointer hover:text-teal-700 p-0 h-auto mb-4"
                         >
                           View Profile
                         </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -306,6 +307,7 @@ function App() {
               </CardContent>
             </Card>
           </div>
+          dd
         </div>
       </div>
     </div>
