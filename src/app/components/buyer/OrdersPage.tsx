@@ -1,106 +1,8 @@
-// "use client"
-
-// import { useState } from "react"
-// import { ChevronDown,  } from "lucide-react"
-// import { ActiveOrderCar } from "@/types"
-// import ActiveOrderCard from "@/app/components/reusabeCard/activeOrderCard"
-
-// const mockCars: ActiveOrderCar[] = [
-//   {
-//     id: 1,
-//     title: "Luxury Sedan",
-//     price: 45000,
-//     image: "/fake.jpg",
-//     mileage: "45k mi",
-//     fuelType: "Gas",
-//     transmission: "Auto",
-//     location: "New York, NY",
-//   },
-//   {
-//     id: 2,
-//     title: "Luxury Sedan",
-//     price: 45000,
-//     image:"/fake.jpg",
-//     mileage: "45k mi",
-//     fuelType: "Gas",
-//     transmission: "Auto",
-//     location: "New York, NY",
-//   },
-//   {
-//     id: 3,
-//     title: "Luxury Sedan",
-//     price: 45000,
-//     image: "/fake.jpg",
-//     mileage: "45k mi",
-//     fuelType: "Gas",
-//     transmission: "Auto",
-//     location: "New York, NY",
-//   },
-//   {
-//     id: 4,
-//     title: "Luxury Sedan",
-//     price: 45000,
-//     image: "/fake.jpg",
-//     mileage: "45k mi",
-//     fuelType: "Gas",
-//     transmission: "Auto",
-//     location: "New York, NY",
-//   },
-// ]
-
-// export default function ActiveOrdersPage() {
-//   const [sortBy, setSortBy] = useState("newest")
-//   const [currentPage, setCurrentPage] = useState(1)
-
-//   return (
-//     <div className="max-w-7xl mx-auto my-12">
-//       {/* Header */}
-//       <div className="flex justify-between items-center mb-8">
-//         <h1 className="text-3xl font-bold text-gray-900">My Active Orders</h1>
-//         <button className="px-4 py-2 border-2 border-teal-600 text-teal-600 rounded-lg font-medium hover:bg-teal-50">
-//           Active Orders <ChevronDown className="inline ml-2" size={20} />
-//         </button>
-//       </div>
-
-//       {/* Sort */}
-//       <div className="flex items-center gap-4 mb-8">
-//         <span className="text-gray-600 font-medium">Sort by:</span>
-//         <select
-//           value={sortBy}
-//           onChange={(e) => setSortBy(e.target.value)}
-//           className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-teal-600"
-//         >
-//           <option value="newest">Newest</option>
-//           <option value="oldest">Oldest</option>
-//           <option value="price-low">Price: Low to High</option>
-//           <option value="price-high">Price: High to Low</option>
-//         </select>
-//       </div>
-
-//       {/* Car Grid */}
-//        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-//           {mockCars.map((car) => (
-//             <ActiveOrderCard key={car.id} car={car} />
-//           ))}
-//         </div>
-
-//       {/* Pagination */}
-//       <div className="flex justify-center gap-2">
-//         <button className="w-10 h-10 bg-teal-600 text-white rounded-lg font-medium">1</button>
-//         <button className="w-10 h-10 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50">2</button>
-//         <button className="w-10 h-10 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50">3</button>
-//         <span className="w-10 h-10 flex items-center justify-center text-gray-400">...</span>
-//         <button className="w-10 h-10 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50">8</button>
-//         <button className="w-10 h-10 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50">›</button>
-//       </div>
-//     </div>
-//   )
-// }
 
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, MapPin, Gauge, Fuel, Cog } from "lucide-react";
+import { ChevronDown, MapPin, } from "lucide-react";
 import Image from "next/image";
 
 interface Car {
@@ -335,7 +237,7 @@ export default function OrdersPage() {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto flex justify-between my-12">
+      <div className=" flex justify-between my-12">
         <div className=" gap-2">
           <div className="mb-6">
             <h1 className="text-3xl font-bold text-gray-900">

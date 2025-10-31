@@ -5,7 +5,7 @@ export function DashboardHeader() {
     <header className="bg-white border-b border-gray-200 px-6 py-4">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-semibold text-gray-900">Welcome Back, John Doe!</h1>
+          <h1 className="text-xl font-semibold text-gray-900 hidden lg:block">Welcome Back, John Doe!</h1>
         </div>
 
         <div className="flex items-center gap-3">

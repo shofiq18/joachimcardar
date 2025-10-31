@@ -7,33 +7,17 @@ import { MdEmail, MdLocationOn } from "react-icons/md";
 import Map from "../../components/contact/Map";
 import ContactForm from "../../components/contact/ContactForm";
 import { BsTwitter } from "react-icons/bs";
+import ContactHero from "@/app/components/reusabeCard/allHeroSection";
 
 const ContactUs = () => {
   return (
     <div className="">
-      {/* Banner Section */}
-      <div
-        className="relative min-h-96 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/contact-image.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#00695C]  opacity-90"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white ">
-          <h1 className="text-2xl md:text-4xl font-bold">CONTACT US</h1>
-          <p className="text-gray-300 md:text-xl mt-3 mb-4 text-center">
-            For no time wise pregnant until for itself porta <br /> justo congue
-            pure pretium ligula
-          </p>
-          <nav>
-            <Link href="/" className="">
-              Home
-            </Link>{" "}
-            <span> &gt; </span>
-            <span className="">Contact Us</span>
-          </nav>
-        </div>
-      </div>
+      
+      <ContactHero
+      title="Contact Us"
+      subtitle="Reach out to us for any inquiries or support."
+      currentPage="Contact"
+    />
 
       {/* Contact Info Section */}
       <div>

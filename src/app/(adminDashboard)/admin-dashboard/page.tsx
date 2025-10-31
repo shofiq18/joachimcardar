@@ -4,7 +4,7 @@ import { RecentListingsTable } from "@/app/components/admin/recent-listings-tabl
 import { RevenueChart } from "@/app/components/admin/revenue-chart"
 import { StatCard } from "@/app/components/admin/stat-card"
 import { VehicleCategoriesChart } from "@/app/components/admin/vehicle-categories-chart"
-import { TrendingUp, Users, Home, DollarSign } from "lucide-react"
+import { TrendingUp, Users, DollarSign, Car } from "lucide-react"
 
 
 export default function AdminDashboard() {
@@ -21,7 +21,7 @@ export default function AdminDashboard() {
       title: "Active Listings",
       value: "287,612",
       change: "+12.5%",
-      icon: Home,
+      icon: Car,
       color: "bg-green-100",
       iconColor: "text-green-500",
     },
