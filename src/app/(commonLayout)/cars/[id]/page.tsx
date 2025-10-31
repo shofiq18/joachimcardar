@@ -256,13 +256,15 @@ function App() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-2 mb-6">
-                  <Button
-                    variant="outline"
-                    className="border-teal-600 text-teal-600 hover:bg-teal-50"
-                  >
-                    Test Request
-                  </Button>
-                  <Button className="bg-teal-600 hover:bg-teal-700 text-white">
+                  <Link href={"/test-request"}>
+                    <Button
+                      variant="outline"
+                      className="border-teal-600 cursor-pointer text-teal-600 hover:bg-teal-50"
+                    >
+                      Test Request
+                    </Button>
+                  </Link>
+                  <Button className="bg-teal-600 cursor-pointer hover:bg-teal-700 text-white">
                     Booking
                   </Button>
                 </div>
@@ -307,7 +309,6 @@ function App() {
               </CardContent>
             </Card>
           </div>
-          dd
         </div>
       </div>
     </div>
