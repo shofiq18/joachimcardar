@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { MapPin } from 'lucide-react';
-import { ActiveOrderCar, Car } from '@/types';
-import Image from 'next/image';
+import React from "react";
+import { MapPin } from "lucide-react";
+import { ActiveOrderCar, Car } from "@/types";
+import Image from "next/image";
 
 interface CarCardProps {
   car: ActiveOrderCar;
@@ -27,19 +27,34 @@ const ActiveOrderCard: React.FC<CarCardProps> = ({ car }) => {
         <div className="grid grid-cols-3 text-[16px] text-gray-600 mb-2 space-x-2">
           <span className="flex items-center">
             <span className="mr-1">
-              <Image src="/icon/road-icon.png" alt="mileage-icon" height={20} width={20} />
+              <Image
+                src="/icon/road-icon.png"
+                alt="mileage-icon"
+                height={20}
+                width={20}
+              />
             </span>
             {car.mileage}
           </span>
           <span className="flex items-center">
             <span className="mr-1">
-              <Image src="/icon/gas-icon.svg" alt="fuel-icon" height={20} width={20} />
+              <Image
+                src="/icon/gas-icon.svg"
+                alt="fuel-icon"
+                height={20}
+                width={20}
+              />
             </span>
             {car.fuelType}
           </span>
           <span className="flex items-center">
             <span className="mr-1">
-              <Image src="/icon/setting.svg" alt="transmission-icon" height={20} width={20} />
+              <Image
+                src="/icon/setting.svg"
+                alt="transmission-icon"
+                height={20}
+                width={20}
+              />
             </span>
             {car.transmission}
           </span>
