@@ -25,7 +25,7 @@ export default function SuccessPage({ onComplete }: SuccessPageProps) {
       <h1 className="text-4xl font-bold text-center mb-4">Congratulations!</h1>
       <p className="text-lg text-gray-600 text-center mb-8">You have successfully New Listing.</p>
 
-      <Link href="./dashboard/seller">
+      <Link href="/seller-dashboard/my-listings">
       <Button
         onClick={onComplete}
         className="w-full max-w-xs h-12 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base rounded-lg"

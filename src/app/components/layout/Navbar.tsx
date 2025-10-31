@@ -476,7 +476,7 @@ const Navbar = () => {
             </button>
           </Link>
 
-          <Link href="/buyer/orders">
+          {/* <Link href="/buyer/orders">
             <button
               className={`w-10 h-10 rounded-full flex items-center justify-center transition ${
                 isActive("/buyer/orders") ? "bg-teal-600 text-white" : "bg-white text-teal-600 hover:bg-teal-50"
@@ -484,7 +484,7 @@ const Navbar = () => {
             >
               <ShoppingBag size={20} />
             </button>
-          </Link>
+          </Link> */}
 
           <Link href="/buyer/account">
             <button

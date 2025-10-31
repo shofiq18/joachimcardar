@@ -38,7 +38,7 @@ const mockChats: Chat[] = [
   {
     id: 2,
     name: "Md Shakil",
-    avatar: "/man-with-purple-background.jpg",
+    avatar: "/profile-blog.jpeg",
     lastMessage: "But I dont on not shaped for sportive",
     time: "9:40 am",
     unread: 0,
@@ -49,7 +49,7 @@ const mockChats: Chat[] = [
   {
     id: 3,
     name: "Philip",
-    avatar: "/man-with-pink-background.jpg",
+    avatar: "/profile-blog.jpeg",
     lastMessage: "But I dont on not shaped for sportive",
     time: "9:35 am",
     unread: 5,
@@ -57,7 +57,7 @@ const mockChats: Chat[] = [
   {
     id: 4,
     name: "Marvin",
-    avatar: "/man-with-yellow-background.jpg",
+    avatar: "/profile-blog.jpeg",
     lastMessage: "But I dont on not shaped for sportive",
     time: "9:50 am",
     unread: 0,
@@ -65,7 +65,7 @@ const mockChats: Chat[] = [
   {
     id: 5,
     name: "Nathan",
-    avatar: "/man-blue-background.png",
+    avatar: "/profile-blog.jpeg",
     lastMessage: "But I dont on not shaped for sportive",
     time: "9:55 am",
     unread: 0,
@@ -73,7 +73,7 @@ const mockChats: Chat[] = [
   {
     id: 6,
     name: "Randall",
-    avatar: "/woman-with-red-background.jpg",
+    avatar: "/profile-blog.jpeg",
     lastMessage: "But I dont on not shaped for sportive",
     time: "8:31 am",
     unread: 0,
@@ -81,7 +81,7 @@ const mockChats: Chat[] = [
   {
     id: 7,
     name: "Mitchell",
-    avatar: "/woman-pink-background.png",
+    avatar: "/profile-blog.jpeg",
     lastMessage: "But I dont on not shaped for sportive",
     time: "9:25 am",
     unread: 0,
@@ -237,14 +237,14 @@ const mockMessages: Message[] = [
   },
 ];
 
-export default function ChatsPage() {
+export default function SellerChat() {
   const [selectedChat, setSelectedChat] = useState<Chat | null>(mockChats[1]);
   const [searchQuery, setSearchQuery] = useState("");
   const [messageText, setMessageText] = useState("");
 
   return (
     <div className="bg-gray-50 py-12">
-      <div className="flex max-w-7xl mx-auto">
+      <div className="flex px-6  mx-auto">
         {/* Sidebar */}
         <div className="w-96 border-r border-gray-200 flex flex-col bg-white shadow-2xl rounded-2xl">
           {/* Header */}

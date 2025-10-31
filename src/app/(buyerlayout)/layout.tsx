@@ -18,7 +18,7 @@ import Footer from "../components/layout/Footer";
 
 const navigationItems = [
   { href: "/buyer/account", label: "Account Details", icon: User },
-  { href: "/buyer/order", label: "My Orders", icon: Package },
+  { href: "/buyer/orders", label: "My Orders", icon: Package },
   { href: "/buyer/notifications", label: "Notification", icon: Bell },
   { href: "/buyer/settings", label: "Account Settings", icon: Settings },
   { href: "/buyer/help", label: "Help Center", icon: HelpCircle },
@@ -124,3 +124,9 @@ export default function DashboardLayout({
     </div>
   );
 }
+
+
+
+
+
+
