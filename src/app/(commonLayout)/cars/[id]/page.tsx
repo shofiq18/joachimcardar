@@ -25,6 +25,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 function App() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -69,7 +70,7 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-4 md:py-8 px-4 md:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 py-4 md:py-8 px-4 md:px-6 lg:px-8 ">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-6">
@@ -308,6 +309,93 @@ function App() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        
+
+        {/* features cars */}
+        <div className="mt-6 lg:mt-12">
+          <h1 className="text-xl lg:text-2xl font-semibold">Featured Cars</h1>
+
+          <div className="mt-5">
+            <div className="grid grid-cols1 md:grid-cols-3 gap-4">
+              {[1, 2, 3].map((car) => (
+                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
+                  <div className="relative">
+                    <Image
+                      src="/Fake.jpg"
+                      alt="Car Image"
+                      className="w-full h-72 object-cover"
+                      width={500}
+                      height={300}
+                    />
+                    {/* {car.isNew && ( */}
+                    <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-md text-sm font-medium">
+                      -13%
+                    </div>
+                    {/* )} */}
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      Mercedes-Benz S-Class
+                    </h3>
+                    <p className="text-xl font-semibold text-gray-700 mb-4">
+                      $458400
+                    </p>
+
+                    <div className="flex items-center gap-2 justify-between text-[16px] text-gray-600 mb-2 space-x-4">
+                      <span className="flex items-center">
+                        <span className="mr-1">
+                          <Image
+                            src="/icon/road-icon.png"
+                            alt="setting-icon"
+                            height={20}
+                            width={20}
+                          />
+                        </span>{" "}
+                        5000 mi
+                      </span>
+                      <span className="flex items-center">
+                        <span className="mr-1">
+                          <Image
+                            src="/icon/gas-icon.svg"
+                            alt="setting-icon"
+                            height={20}
+                            width={20}
+                          />
+                        </span>{" "}
+                        GAS
+                      </span>
+                      {/* {car.isAuto && ( */}
+                      <span className="flex items-center mr-4">
+                        <span className="mr-1">
+                          <Image
+                            src="/icon/setting.svg"
+                            alt="setting-icon"
+                            height={20}
+                            width={20}
+                          />
+                        </span>{" "}
+                        Auto
+                      </span>
+                      {/* )} */}
+                    </div>
+                    <div>
+                      <span className="flex items-center mb-2 text-gray-600 ">
+                        <MapPin size={20} className="mr-1 text-gray-600" /> New
+                        Your, USA
+                      </span>
+                    </div>
+                    <Link href={`/cars/1`}>
+                      <button className="w-full bg-[#00695C] text-white py-2 rounded-md hover:bg-teal-700 transition font-medium">
+                        View Details
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
