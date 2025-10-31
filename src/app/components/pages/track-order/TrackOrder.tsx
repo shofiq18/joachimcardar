@@ -205,7 +205,7 @@ export default function TrackOrder() {
                 <div className="flex justify-end pt-4">
                   <Button
                     onClick={handleComplete}
-                    className="bg-teal-700 hover:bg-teal-800 text-white"
+                    className="bg-[#00695C] hover:bg-teal-800 text-white"
                   >
                     Mark Completed
                   </Button>

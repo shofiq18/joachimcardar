@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { ChevronDown, MapPin, } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Car {
   id: number;
@@ -201,9 +202,11 @@ export default function OrdersPage() {
   const getActionButton = (car: Car) => {
     if (activeTab === "active") {
       return (
+        <Link href="/track-order">
         <button className="w-full bg-[#00695C] text-white py-2 rounded-lg font-medium hover:bg-teal-700 transition">
           Track Order
         </button>
+        </Link>
       );
     }
 
