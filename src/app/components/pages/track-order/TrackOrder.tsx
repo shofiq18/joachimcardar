@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Container from "../../shared/Container";
+import { steps } from "@/constant";
 
 export default function TrackOrder() {
   const [completedStep, setCompletedStep] = useState(0);
@@ -33,13 +34,16 @@ export default function TrackOrder() {
   useEffect(() => {
     setLoading(true);
     const fetchOrder = async () => {
+
+      // api call here -- shofikul vai
+
       // Simulate API delay
       await new Promise((res) => setTimeout(res, 2000));
 
       // Dummy API Response
       const data = {
         orderId: "123",
-        status: "shipped", // try: "verified" | "packed" | "shipped" | "delivered"
+        status: "shipped",
       };
 
       // Map API status → step index
@@ -59,32 +63,7 @@ export default function TrackOrder() {
 
   const handleComplete = () => setCompletedStep(topSteps.length);
 
-  const steps = [
-    {
-      title: "Verified Payments",
-      date: "Dec 15",
-      time: "10:04 AM",
-      address: "User Verified",
-    },
-    {
-      title: "Order is in Packing",
-      date: "Dec 15",
-      time: "15:20 PM",
-      address: "Warehouse A",
-    },
-    {
-      title: "Orders are On Train",
-      date: "Dec 15",
-      time: "11:30 AM",
-      address: "Station Port",
-    },
-    {
-      title: "Order Customs Port",
-      date: "Dec 16",
-      time: "14:40 PM",
-      address: "Port Location",
-    },
-  ];
+
 
   return (
     <Container>
