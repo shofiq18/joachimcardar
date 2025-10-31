@@ -1,32 +1,25 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 import {
-  LayoutDashboard,
-  Users,
-  CreditCard,
-  Settings,
-  LogOut,
+  BarChartHorizontalIcon,
+  BellIcon,
+  Car,
   ChevronLeft,
   ChevronRight,
-  Car,
-  PersonStandingIcon,
+  CreditCard,
+  LayoutDashboard,
+  LogOut,
+  Settings,
   User,
-  BellIcon,
-  AlignVerticalJustifyCenterIcon,
-  AlignHorizontalJustifyStartIcon,
-  ChartBar,
-  ChartColumnBigIcon,
-  ChartNoAxesCombinedIcon,
-  BarChartHorizontalIcon,
+  Users
 } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { MdAnalytics, MdNotifications, MdOutlineCategory } from "react-icons/md"
-import { BsPersonFillExclamation } from "react-icons/bs"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { useState } from "react"
+import { MdOutlineCategory } from "react-icons/md"
 
 const menuItems = [
   {
